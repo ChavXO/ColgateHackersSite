@@ -1,2 +1,2 @@
 # ColgateHackersSite
-The official site fot the Colgate Hackers club.
+The official site for the Colgate Hackers club.
