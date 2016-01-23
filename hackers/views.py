@@ -20,3 +20,9 @@ def event_detail(request, event_id):
 	context = {'latest_events_list':latest_events_list}
 	template = loader.get_template('events.html')
 	return render(request, 'events.html', context)
+
+def event_index(request):
+	latest_events_list = Events.objects.all()[:5]
+	context = {'latest_events_list':latest_events_list}
+	template = loader.get_template('events.html')
+	return render(request, 'events.html', context)
