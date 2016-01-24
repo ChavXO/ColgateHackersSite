@@ -8,12 +8,19 @@ def index(request):
 	template = loader.get_template('index.html')
 	return render(request, 'index.html', {})
 
+def blog_index(request):
+    latest_post_list = BlogPost.objects.all()[:5]
+    context = {'latest_blog_list':latest_post_list}
+    template = loader.get_template('posts.html')
+    return render(request, 'posts.html', context)
     
 def blog_detail(request, post_id):
-	latest_post_list = BlogPost.objects[:5]
-	context = {'latest_blog_list':latest_post_list}
-	template = loader.get_template('blog.html')
-	return render(request, 'post.html', context)
+    post = ""
+    try:
+        post = BlogPost.objects.get(pk=post_id)
+    except BlogPost.DoesNotExist:
+        raise Http404("Post does not exist")
+    return render(request, 'posts/detail.html', {'post': post})
     
 def event_detail(request, event_id):
 	latest_events_list = Events.objects[:5]

@@ -6,6 +6,11 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 		  {% load staticfiles %}
 		  <link rel="stylesheet" type="text/css" href = "{%static 'index.css'%}" />
+          <link rel="stylesheet" type="text/css" href = "{%static 'style.css'%}" />
+          <link rel="stylesheet" type="text/css" href = "{%static 'reset.css'%}" />
+          <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+          <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
 		  
 		  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 			  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -19,12 +24,12 @@
 			
 			<div class="container-fluid">
     <div class="navbar-header">
-		<a class="navbar-brand" href="#">GateHacks</a>
+		<a class="navbar-brand" href="{% url 'hackers:index' %}">GateHacks</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li class="active"><a href="#">Home</a></li>
-		<li><a href="{% url 'hackers:event_index' %} ">Events</a></li>
-		<li><a href="#">Blogs</a></li>
+		<li class="active"><a href="{% url 'hackers:index' %}">Home</a></li>
+		<li><a href="{% url 'hackers:event_index' %}">Events</a></li>
+		<li><a href="{% url 'hackers:blog_index' %}">Blog</a></li>
 		<li><a href="#">Projects</a></li>
 	</ul>
 			</div>
@@ -32,40 +37,58 @@
 
 <!--<img class = "image" src="{%static 'images/hackers.jpg' %}"></img>-->
 	
-	<div style="background: url({%static 'images/hackers.jpg' %}); width:100%; height: 500px;">
+	<div class="page_header" style="background: url({%static 'images/hackers.jpg' %}); width:100%; height: 500px;">
 		<center style="padding:20px;">
 			
-		<div style=" bottom: 0; left: 0.5em; width: 400px; font-weight: bold; color: #fff;">
-			<p>(text to appear at the bottom left of the image)</p>
+		<div style=" bottom: 0; left: 0.5em; width: 400px; font-weight: bold; color: lightgrey; font-size: 48px;">
+			<p></br>Colgate Hackers </br> </br> Official website
+            </p>
 		</div>
-		
-		<p style="top: 1em; right: 2em; width: 120px; padding: 4px; background-color: #fff; font-weight: bold; font-size: 11px;">
+		<!--
+		<p style="top: 1em; right: 2em; width: 120px; padding: 4px; background-color: lightgrey; font-weight: bold; font-size: 36px;">
 		(text to appear at the top right of the image)
-		</p>
+		</p>-->
 		</center>
 	</div>
 	
-		
+  <!--
   <div class="container" style="color:lightgrey">
 	  <center>
 		
 		<p>slideshow will appear here</p>
 	  </center>
-  </div>
+  </div>-->
   
-  <div class="container" style="color:lightgrey">
+  <div class="container" style="color:white; padding-top:20px; font-weight:bold; font-size:16px">
 	  <center>
-	  <h3>About</h3>
-	  <p>About text will go here.</p>
-	  </cenetr>
+	  
+	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis odio libero, pharetra quis molestie in, fringilla eu nisi. Quisque accumsan fringilla cursus. Nulla consectetur id magna eu gravida. Cras hendrerit mauris lacus, id accumsan nulla iaculis eu. Integer nulla quam, pellentesque nec mattis laoreet, tincidunt in eros. Nullam at ultrices felis, vitae sodales tellus. Morbi tempor, nisl nec posuere euismod, erat nulla blandit velit, nec malesuada est urna sed felis. Fusce gravida a nisl ut consequat. Suspendisse luctus pretium magna, a ullamcorper dolor accumsan vitae. Sed posuere lacus ac diam interdum hendrerit. Duis consequat sem et mi bibendum luctus. Proin at dui eu urna blandit pharetra. Maecenas nec luctus leo, rhoncus laoreet mauris. Duis non turpis vel est cursus rhoncus ut vel purus. Quisque ac risus libero.
+           </br>
+        Phasellus viverra justo non pellentesque pharetra. Quisque euismod purus velit, rhoncus vestibulum erat ullamcorper vel. Integer efficitur laoreet blandit. Pellentesque placerat velit ac elit aliquam ullamcorper. Sed nibh massa, vulputate et convallis a, porta et elit. Phasellus ullamcorper metus eget diam porta, et rutrum ligula placerat. Proin sed finibus dolor. Quisque massa urna, ullamcorper et ligula id, tempor porttitor lacus. Quisque non nisl eu lorem sollicitudin ultricies. Vivamus convallis varius mauris. Fusce vel lectus vel ante dictum elementum vel non est. Maecenas sit amet magna urna. Quisque cursus auctor risus, ut hendrerit tortor commodo sed. Integer tellus libero, mollis scelerisque fringilla ac, efficitur eget diam. Phasellus quis erat non diam feugiat tempus non ut urna.
+            </br>
+        Suspendisse mattis, arcu et convallis pulvinar, neque lorem imperdiet augue, sit amet fermentum nisi tortor et eros. Cras rhoncus in tellus quis tincidunt. Aliquam sollicitudin sapien quis interdum condimentum. Integer efficitur, ante id posuere vulputate, purus sapien bibendum tellus, quis mollis augue lorem et ligula. Etiam non quam nec nunc dapibus aliquet. Etiam tortor nisl, consequat ut tempor vel, consectetur quis ante. Donec viverra luctus ultricies. Aliquam ut felis ultrices, maximus sapien in, dignissim sem. Donec sed hendrerit nisl. Aliquam accumsan sem eu nisl cursus tempus ac a tellus.
+            </br>
+        Cras non malesuada tellus. Proin quis orci risus. Etiam lectus sapien, convallis sit amet lectus ut, condimentum pellentesque neque. Curabitur a velit risus. Vivamus rhoncus semper leo, vel commodo orci. Sed aliquet gravida fringilla. Aliquam erat volutpat. Vivamus rhoncus fermentum arcu ac imperdiet.
+            </br>
+        In nisi ligula, rutrum non semper ut, sollicitudin at sem. Nam scelerisque mauris ut dui consectetur, dictum pulvinar felis hendrerit. In in augue dolor. Donec quis sagittis enim, vitae gravida nisl. In convallis, sapien id placerat congue, diam purus lobortis neque, quis aliquam neque risus sit amet nisl. Morbi luctus, dui vel varius bibendum, nibh mauris ornare tortor, id ultricies ligula sem a nibh. Sed auctor lacinia mauris vitae dignissim. Ut hendrerit massa sit amet metus blandit fringilla. Proin tincidunt ipsum eget massa varius, ut sodales lectus tempus. Nam consequat hendrerit ante eu dignissim. Nulla malesuada varius tellus, et pellentesque erat pharetra vulputate. Curabitur vestibulum id lectus a pretium. Donec sed ante quis orci volutpat cursus vel id turpis. Vestibulum consequat non ligula in interdum. Aenean pretium lobortis tellus. </p>
+	  </center>
   </div>
   
   
 	  <footer class ="footer">
 		  
-		  <div class="container">
-		  <p>Social media links will appear here</p>
-		  </div>
+		  <div class='container'>
+          <div class='row'><i class='icon-facebook'></i><i class='icon-twitter'></i><i class='icon-googleplus'></i><i class='icon-pinterest'></i><i class='icon-dribbble'></i></div>
+          <!--<div class='row'><i class='icon-facebook'></i><i class='icon-twitter'></i><i class='icon-googleplus'></i><i class='icon-pinterest'></i><i class='icon-dribbble'></i></div>
+          <div class='row'><i class='icon-facebook'></i><i class='icon-twitter'></i><i class='icon-googleplus'></i><i class='icon-pinterest'></i><i class='icon-dribbble'></i></div>
+          <div class='row'><i class='icon-facebook'></i><i class='icon-twitter'></i><i class='icon-googleplus'></i><i class='icon-pinterest'></i><i class='icon-dribbble'></i></div>
+          <div class='row'><i class='icon-facebook'></i><i class='icon-twitter'></i><i class='icon-googleplus'></i><i class='icon-pinterest'></i><i class='icon-dribbble'></i></div>
+          <div class='row'><i class='icon-facebook'></i><i class='icon-twitter'></i><i class='icon-googleplus'></i><i class='icon-pinterest'></i><i class='icon-dribbble'></i></div>-->
+          <!--<div class='row'><i class='icon-facebook'></i><i class='icon-twitter'></i><i class='icon-googleplus'></i><i class='icon-pinterest'></i><i class='icon-dribbble'></i></div>
+          <div class='row'><i class='icon-facebook'></i><i class='icon-twitter'></i><i class='icon-googleplus'></i><i class='icon-pinterest'></i><i class='icon-dribbble'></i></div>
+          <div class='row'><i class='icon-facebook'></i><i class='icon-twitter'></i><i class='icon-googleplus'></i><i class='icon-pinterest'></i><i class='icon-dribbble'></i></div>
+          <div class='row'><i class='icon-facebook'></i><i class='icon-twitter'></i><i class='icon-googleplus'></i><i class='icon-pinterest'></i><i class='icon-dribbble'></i></div>-->
+        </div>
 	  </footer>
 	  
   

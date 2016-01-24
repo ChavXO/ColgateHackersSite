@@ -6,43 +6,49 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 		  {% load staticfiles %}
 		  <link rel="stylesheet" type="text/css" href = "{%static 'index.css'%}" />
+          <link rel="stylesheet" type="text/css" href = "{%static 'posts.css'%}" />
 		  
 		  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 			  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 			  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-			  </head>
+	</head>
 	<body style="background-color:black" >
-		
-		
-		
 		<nav class="navbar navbar-inverse">
 			
 			<div class="container-fluid">
-    <div class="navbar-header">
+            <div class="navbar-header">
 		<a class="navbar-brand" href="{% url 'hackers:index' %}">GateHacks</a>
 	</div>
 	<ul class="nav navbar-nav">
 		<li><a href="{% url 'hackers:index' %}">Home</a></li>
-		<li class="active"><a href="{% url 'hackers:event_index' %}">Events</a></li>
-		<li><a href="{% url 'hackers:blog_index' %}">Blogs</a></li>
+		<li><a href="{% url 'hackers:event_index' %}">Events</a></li>
+		<li class="active"><a href="{% url 'hackers:blog_index' %}">Blogs</a></li>
 		<li><a href="#">Projects</a></li>
 	</ul>
 			</div>
 		</nav>
 		
-		
   <div class="container" style="color:lightgrey">
-		  <p>Events will appear here</p>
+    <center> <h1> Latest Blog posts </h1> </center>
+	{% if latest_blog_list %}
+        <div class="posts" style="height:600px;">
+        <ul>
+            {% for post in latest_blog_list %}
+                <li><a href="/posts/{{ post.id }}/">{{ post.title_text }}</a></li>
+            {% endfor %}
+        </ul>
+        </div>
+    {% else %}
+        <p>No new posts yet.</p>
+    {% endif %}
   </div>
   
-  
-  <footer class ="footer" style="position:asbolute;">
-	  
-	  <div class="container">
+	  <footer class ="footer" style="position:asbolute;">
+		  <div class="container">
 		  <p>Social media links will appear here</p>
-	  </div>
-  </footer>
-  
+		  </div>
+	  </footer>
+	  
   
 	</body>
 </html>
